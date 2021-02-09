@@ -8,32 +8,34 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1>Шаблон формы заявки</h1>
+      <h1>Заявка на исправление ошибки</h1>
     </header>
     <main class="content">
-      <form enctype="multipart/form-data" method="post">
+      <form name="titleForm" class="form-title">
         <input
-          class="page__title"
+          class="page__title page__input"
           name="title"
           type="text"
           placeholder="Заголовок"
           minlength="4"
-          maxlength="55"
+          maxlength="60"
           required
         />
       </form>
-      <form>
-        <input
-          class="page__subtitle"
+      <form name="subtitleForm" class="form-subtitle">
+        <textarea
+          name="subtitle"
+          class="page__subtitle page__input"
           type="text"
           placeholder="Описание"
           minlength="4"
           required
-        />
+        ></textarea>
       </form>
-      <form>
+      <form name="formObj" class="form-obj">
         <input
-          class=""
+          name="obj"
+          class="obj page__input"
           type="text"
           placeholder="Объект"
           minlength="4"
@@ -41,50 +43,37 @@
           required
         />
       </form>
-      <div>
-        <form>
-          <p class="page__description-file">
-            Загрузите ваши фотографии на сервер
-          </p>
-          <input
-            type="file"
-            name="file"
-            multiple
-            accept="image/jpeg,image/png"
-          />
-        </form>
-      </div>
-      <div>
-        <form>
-          <p class="page__description-type">Тип</p>
-          <select name="type" required>
-            <option>Ошибка</option>
-            <option>Задача</option>
-          </select>
-        </form>
-      </div>
-      <div>
-        <form>
-          <p class="page__description-priority">Приоритет</p>
-          <select name="priority" required>
-            <option>Критический</option>
-            <option>Высокий</option>
-            <option>Средний</option>
-            <option>Низкий</option>
-          </select>
-        </form>
-      </div>
-      <div>
-        <form>
-          <p class="page__description-architecture">Архитектура</p>
-          <select name="architecture" required>
-            <option>Новая</option>
-            <option>Старая</option>
-          </select>
-        </form>
-      </div>
-      <form>
-        <button type="submit" name="submit">Отправить</button>
+      <form class="form-file" enctype="multipart/form-data" method="post">
+        <p class="page__description-file">Добавить скриншоты</p>
+        <input type="file" name="file" multiple accept="image/jpeg,image/png" />
+      </form>
+      <form name="typeForm" class="form-type">
+        <p class="page__description-type">Тип</p>
+        <select class="page__container" name="type" required>
+          <option>Ошибка</option>
+          <option>Задача</option>
+        </select>
+      </form>
+      <form name="priorityForm" class="form-priority">
+        <p class="page__description-priority">Приоритет</p>
+        <select class="page__container" name="priority" required>
+          <option>Критический</option>
+          <option>Высокий</option>
+          <option>Средний</option>
+          <option>Низкий</option>
+        </select>
+      </form>
+      <form name="architectureForm" class="form-architecture">
+        <p class="page__description-architecture">Архитектура</p>
+        <select class="page__container" name="architecture" required>
+          <option>Новая</option>
+          <option>Старая</option>
+        </select>
+      </form>
+      <form name="button" class="form-submit">
+        <button class="page__container" type="submit" name="submit">
+          Отправить
+        </button>
       </form>
     </main>
     <footer class="footer">
@@ -110,5 +99,6 @@
         </ul>
       </div>
     </footer>
+    <script src="./script/script.js"></script>
   </body>
 </html>
